@@ -1,0 +1,701 @@
+:root {
+  --background-light: #f4f4f4;
+  --background-dark: #111;
+  --text-light: #333;
+  --text-dark: #fff;
+  --header-light: #fff;
+  --header-dark: #000;
+  --button-light: #007bff;
+  --button-dark: #333;
+  --input-light: #fff;
+  --input-dark: #222;
+  --border-light: #ccc;
+  --border-dark: #444;
+  --card-light: #fff;
+  --card-dark: #333;
+  --service-card-light: #fff;
+  --service-card-dark: #333;
+  --portfolio-item-light: #fff;
+  --portfolio-item-dark: #333;
+  --team-member-light: #fff;
+  --team-member-dark: #333;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.logo {
+  mix-blend-mode: multiply;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Default (Bright Styled) */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-light); /* Lighter background */
+  color: var(--text-light); /* Darker text for better readability */
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--header-light); /* Lighter header background */
+}
+
+#darkModeToggle {
+  background: #ddd; /* Lighter button background */
+  color: var(--text-light);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 15px;
+}
+
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("/images/bg-main.png") no-repeat center center/cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  color: var(--text-dark);
+  border-radius: 10px;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(0.1rem); /* Semi-transparent background */
+  display: none; /* Initially hidden */
+  z-index: 50; /* Place it above the background but below the menu */
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--button-light); /* Brighter button color */
+  color: var(--text-dark);
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+#contact {
+  padding: 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+input,
+textarea,
+button {
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  background: var(--input-light); /* Lighter background */
+  color: var(--text-light); /* Dark text */
+  border: 1px solid var(--border-light); /* Lighter border */
+}
+
+button {
+  background: var(--button-light); /* Bright button background */
+  border: none;
+  cursor: pointer;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode header {
+  background-color: var(--header-dark);
+}
+
+.dark-mode .btn,
+.dark-mode button {
+  background: var(--button-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode input,
+.dark-mode textarea {
+  background: var(--input-dark);
+  border: 1px solid var(--border-dark);
+  color: var(--text-dark);
+}
+
+#about {
+  padding: 40px 20px;
+  background-color: var(--background-light); /* Light mode background */
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-light); /* Dark text color for light mode */
+}
+
+#about p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-team {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  width: 250px;
+  text-align: center;
+  padding: 10px;
+  background: var(--card-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.team-member h3 {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  color: var(--text-light); /* Dark text for team member names */
+}
+
+.team-member p {
+  color: #777;
+}
+
+/* Dark Mode Overrides */
+.dark-mode #about {
+  background-color: var(--input-dark); /* Dark background for dark mode */
+}
+
+.dark-mode #about h2 {
+  color: #ddd; /* Light text for headings in dark mode */
+}
+
+.dark-mode #about p {
+  color: #aaa; /* Lighter text for paragraphs in dark mode */
+}
+
+.dark-mode .team-member {
+  background: var(
+    --card-dark
+  ); /* Dark background for team member cards in dark mode */
+  color: #ddd; /* Light text for team members in dark mode */
+}
+
+.dark-mode .team-member h3 {
+  color: #fff; /* Light text for team member names in dark mode */
+}
+
+.dark-mode .team-member p {
+  color: #bbb; /* Lighter text for job titles in dark mode */
+}
+
+/* Services Section */
+#services {
+  padding: 40px 20px;
+  background-color: var(
+    --background-light
+  ); /* Light background for services section */
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#services h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+
+#services .service-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  width: 250px;
+  text-align: center;
+  padding: 20px;
+  background: var(--service-card-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  margin: 15px 0;
+  font-size: 1.3rem;
+  color: var(--text-light);
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Dark Mode Overrides */
+.dark-mode #services {
+  background-color: var(
+    --input-dark
+  ); /* Dark background for services in dark mode */
+}
+
+.dark-mode #services h2 {
+  color: #ddd; /* Light text for headings in dark mode */
+}
+
+.dark-mode .service-card {
+  background: var(--service-card-dark); /* Dark background for service cards */
+  color: #ddd; /* Light text for service card content */
+}
+
+.dark-mode .service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .service-card h3 {
+  color: #fff; /* Light text for card titles in dark mode */
+}
+
+.dark-mode .service-card p {
+  color: #bbb; /* Lighter text for descriptions in dark mode */
+}
+
+/* Portfolio Section */
+#portfolio {
+  padding: 40px 20px;
+  background-color: var(
+    --background-light
+  ); /* Light background for portfolio */
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#portfolio h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+
+#portfolio .portfolio-gallery {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
+}
+
+.portfolio-item {
+  background-color: var(--portfolio-item-light);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.portfolio-item h3 {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  color: var(--text-light);
+}
+
+.portfolio-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Dark Mode Overrides */
+.dark-mode #portfolio {
+  background-color: var(--input-dark); /* Dark background for portfolio */
+}
+
+.dark-mode #portfolio h2 {
+  color: #ddd; /* Light text for headings in dark mode */
+}
+
+.dark-mode .portfolio-item {
+  background: var(
+    --portfolio-item-dark
+  ); /* Dark background for portfolio items */
+  color: #ddd; /* Light text for portfolio content */
+}
+
+.dark-mode .portfolio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .portfolio-item h3 {
+  color: #fff; /* Light text for portfolio titles in dark mode */
+}
+
+.dark-mode .portfolio-item p {
+  color: #bbb; /* Lighter text for descriptions in dark mode */
+}
+
+/* Navigation Styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  background-color: #ddd;
+  color: var(--text-light);
+  border-radius: 0.25rem;
+}
+
+/* .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+} */
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transform: translateY(-7px);
+}
+
+nav #hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+nav #nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 20px;
+}
+
+nav #nav-menu li {
+  margin: 0;
+}
+
+nav #nav-menu li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding: 10px;
+}
+nav #nav-menu li a:hover,
+nav #nav-menu li a.active {
+  color: var(--button-light); /* Same blue color */
+  border-bottom: 2px solid var(--button-light);
+}
+
+nav #nav-menu button {
+  background: var(--button-dark); /* Lighter button background */
+  color: var(--text-dark);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dark Mode Navigation */
+.dark-mode nav {
+  background-color: var(--input-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode #nav-menu {
+  background-color: var(--input-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode #nav-menu li a {
+  color: var(--text-dark);
+}
+
+.dark-mode #nav-menu li a:hover,
+.dark-mode #nav-menu li a.active {
+  color: var(--button-dark);
+  border-bottom: 2px solid var(--button-dark);
+}
+
+.dark-mode #nav-menu button {
+  background: var(--button-dark);
+  color: var(--text-dark);
+}
+
+/* FAQ Section */
+#faq {
+  padding: 40px 20px;
+  background-color: var(
+    --background-light
+  ); /* Light background for FAQ section */
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#faq h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-toggle {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.faq-toggle:hover {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.faq-content {
+  display: none;
+  padding: 10px;
+  background-color: var(--card-light);
+  border-radius: 5px;
+  margin-top: 10px;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.faq-item.open .faq-content {
+  display: block;
+}
+
+.faq-item.open .faq-toggle {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode #faq {
+  background-color: var(--input-dark);
+}
+
+.dark-mode .faq-toggle {
+  background-color: var(--input-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode .faq-toggle:hover {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+.dark-mode .faq-content {
+  background-color: var(--card-dark);
+  color: var(--text-dark);
+}
+
+/* .dark-mode .faq-item.open .faq-toggle {
+  background-color: var(--input-dark);
+  color: var(--text-dark);
+} */
+
+footer {
+  background-color: #1f1f1f; /* Dark background for dark mode */
+  color: #fff; /* Light text color for dark mode */
+  padding: 20px 120px;
+  text-align: left;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00aaff; /* Hover color for social icons */
+}
+
+#social-media {
+  margin-bottom: 20px;
+}
+
+#social-media h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+#footer-info {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+#footer-info p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 15px;
+  }
+
+  footer a {
+    font-size: 1.2rem;
+  }
+
+  #social-media h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #faq {
+    padding: 20px;
+  }
+
+  #faq h2 {
+    font-size: 1.8rem;
+  }
+
+  .faq-toggle {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  nav #hamburger {
+    display: block;
+    z-index: 200;
+  }
+
+  nav #nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    background-color: var(--header-light);
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    padding: 20px;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 0.25rem;
+  }
+
+  nav #nav-menu.active {
+    display: flex;
+  }
+
+  nav #nav-menu li {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-team {
+    flex-direction: column;
+  }
+
+  #portfolio .portfolio-gallery {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+
+  .team-member,
+  .portfolio-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
