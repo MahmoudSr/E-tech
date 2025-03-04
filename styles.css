@@ -700,7 +700,7 @@ footer a:hover {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   #hero {
     background: url("images/bg-main.png") no-repeat -490px center/ cover;
   }
